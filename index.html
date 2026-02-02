@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Weekly Lessons | Ahmed Mehdi</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #0f172a;
+      --card: #111827;
+      --accent: #38bdf8;
+      --text: #e5e7eb;
+      --muted: #94a3b8;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: 'Inter', sans-serif;
+      background: linear-gradient(180deg, #020617, var(--bg));
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    header {
+      padding: 4rem 1.5rem 3rem;
+      text-align: center;
+    }
+
+    header h1 {
+      font-size: 2.6rem;
+      margin-bottom: 0.5rem;
+    }
+
+    header p {
+      color: var(--muted);
+      max-width: 600px;
+      margin: 0 auto;
+    }
+
+    main {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 4rem;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: linear-gradient(180deg, var(--card), #020617);
+      border-radius: 16px;
+      padding: 1.6rem;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.35);
+      transition: transform 0.25s ease, box-shadow 0.25s ease;
+    }
+
+    .card:hover {
+      transform: translateY(-6px);
+      box-shadow: 0 18px 40px rgba(56,189,248,0.25);
+    }
+
+    .card h3 {
+      margin-top: 0;
+      margin-bottom: 0.4rem;
+    }
+
+    .card p {
+      font-size: 0.95rem;
+      color: var(--muted);
+      margin-bottom: 1.2rem;
+    }
+
+    .links a {
+      display: inline-block;
+      margin-right: 0.6rem;
+      margin-bottom: 0.4rem;
+      padding: 0.45rem 0.9rem;
+      border-radius: 999px;
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-decoration: none;
+      color: #020617;
+      background: var(--accent);
+      transition: background 0.2s ease, transform 0.2s ease;
+    }
+
+    .links a.secondary {
+      background: #e5e7eb;
+    }
+
+    .links a:hover {
+      transform: scale(1.05);
+    }
+
+    footer {
+      text-align: center;
+      padding: 2rem 1.5rem;
+      color: var(--muted);
+      font-size: 0.85rem;
+      border-top: 1px solid rgba(148,163,184,0.15);
+    }
+
+    footer span {
+      color: var(--accent);
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>📚 Weekly Lessons</h1>
+    <p>Structured weekly learning materials, recorded sessions, and resources.
+       All lessons are updated regularly.</p>
+  </header>
+
+  <main>
+    <section class="grid">
+
+      <!-- WEEK 1 -->
+      <div class="card">
+        <h3>Week 1 · Introduction</h3>
+        <p>Overview, objectives, and foundational concepts.</p>
+        <div class="links">
+          <a href="#">🎥 Video</a>
+          <a class="secondary" href="#">📄 Slides</a>
+        </div>
+      </div>
+
+      <!-- WEEK 2 -->
+      <div class="card">
+        <h3>Week 2 · Core Concepts</h3>
+        <p>Deep dive into key principles and examples.</p>
+        <div class="links">
+          <a href="#">🎥 Video</a>
+          <a class="secondary" href="#">📄 Notes</a>
+        </div>
+      </div>
+
+      <!-- WEEK 3 -->
+      <div class="card">
+        <h3>Week 3 · Practical Applications</h3>
+        <p>Hands-on walkthroughs and real-world cases.</p>
+        <div class="links">
+          <a href="#">🎥 Video</a>
+          <a class="secondary" href="#">🧪 Exercises</a>
+        </div>
+      </div>
+
+      <!-- ADD MORE WEEKS -->
+      <div class="card">
+        <h3>Week 4 · Advanced Topics</h3>
+        <p>Advanced material and discussion-based learning.</p>
+        <div class="links">
+          <a href="#">🎥 Video</a>
+          <a class="secondary" href="#">📄 Resources</a>
+        </div>
+      </div>
+
+    </section>
+  </main>
+
+  <footer>
+    <p>© <span>Ahmed Mehdi</span> · Hosted on GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
