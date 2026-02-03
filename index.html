@@ -76,16 +76,24 @@
 
     .card h3 {
       margin-top: 0;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.6rem;
+      color: var(--accent);
+      font-size: 1.2rem;
     }
 
     .card p {
       font-size: 0.95rem;
-      color: var(--muted);
-      margin-bottom: 1.2rem;
+      color: var(--text);
+      margin-bottom: 1rem;
     }
 
     /* Week 1: Logo + Text + Links + Video */
+    .card-header {
+      margin-bottom: 1rem;
+      font-weight: 600;
+      color: var(--accent);
+    }
+
     .card-top {
       display: flex;
       align-items: flex-start;
@@ -112,12 +120,12 @@
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      justify-content: space-between;
+      justify-content: flex-start; /* Align links starting under the logo */
       margin-bottom: 1rem;
     }
 
     .card-links a {
-      flex: 1 1 45%;
+      flex: 1 1 180px;
       text-align: center;
       padding: 0.5rem 0;
       border-radius: 999px;
@@ -151,6 +159,9 @@
         align-items: center;
         text-align: center;
       }
+      .card-links {
+        justify-content: center;
+      }
       .card-links a {
         flex: 1 1 100%;
       }
@@ -183,6 +194,10 @@
     <section class="grid">
       <!-- WEEK 1 -->
       <div class="card">
+        <!-- Card Header -->
+        <div class="card-header">Week 1 · 8 Feb 2026 · Topic: Imam al-Mahdi (AS)</div>
+
+        <!-- Top row: Logo + Text -->
         <div class="card-top">
           <img src="Intidhar.jpg" alt="Logo" class="card-logo">
           <p class="card-text">
@@ -190,6 +205,7 @@
           </p>
         </div>
 
+        <!-- Links & Resources row -->
         <div class="card-links">
           <a class="secondary" href="#">📄 Slides</a>
           <a class="secondary" href="Imam_AlMahdi_Lesson1_8Feb26.pdf" target="_blank">📄 Class Resource</a>
@@ -197,6 +213,7 @@
           <a class="secondary" href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age" target="_blank">🌐 Additional Resource</a>
         </div>
 
+        <!-- YouTube Video row -->
         <div class="video-container">
           <iframe width="100%" height="300" 
                   src="https://www.youtube.com/embed/FZWwLWRZS3Y" 
