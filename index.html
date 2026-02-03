@@ -24,7 +24,6 @@
       font-family: 'Inter', sans-serif;
       background: linear-gradient(180deg, #020617, var(--bg));
       color: var(--text);
-      line-height: 1.6;
     }
 
     header {
@@ -32,33 +31,34 @@
       text-align: center;
     }
 
-    header h1 {
-      font-size: 2.6rem;
-      margin-bottom: 0.5rem;
-    }
-
-    header h2 {
-      margin-top: 0;
-      font-size: 1.5rem;
-      color: var(--muted);
-    }
-
-    header p {
-      color: var(--muted);
-      max-width: 600px;
-      margin: 0 auto;
-    }
+    header h1 { font-size: 2.6rem; }
+    header h2 { color: var(--muted); }
 
     main {
-      max-width: 1100px;
+      max-width: 1200px;
       margin: 0 auto;
       padding: 2rem 1.5rem 4rem;
     }
 
+    /* ✅ FIXED 3-COLUMN GRID */
     .grid {
       display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      grid-template-columns: repeat(3, 1fr);
       gap: 1.5rem;
+    }
+
+    /* Tablet */
+    @media (max-width: 1024px) {
+      .grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    /* Mobile */
+    @media (max-width: 600px) {
+      .grid {
+        grid-template-columns: 1fr;
+      }
     }
 
     .card {
@@ -66,224 +66,124 @@
       border-radius: 16px;
       padding: 1.6rem;
       box-shadow: 0 10px 25px rgba(0,0,0,0.35);
-      transition: transform 0.25s ease, box-shadow 0.25s ease;
+      transition: transform 0.25s ease;
     }
 
     .card:hover {
       transform: translateY(-6px);
-      box-shadow: 0 18px 40px rgba(56,189,248,0.25);
     }
 
-    .card h3 {
-      margin-top: 0;
-      margin-bottom: 0.6rem;
-      color: var(--accent);
-      font-size: 1.2rem;
-    }
-
-    .card p {
-      font-size: 0.95rem;
-      color: var(--text);
-      margin-bottom: 1rem;
-    }
-
-    /* Week 1: Logo + Text + Links + Video */
     .card-header {
-      margin-bottom: 1rem;
       font-weight: 600;
       color: var(--accent);
+      margin-bottom: 1rem;
     }
 
     .card-top {
       display: flex;
-      align-items: flex-start;
       gap: 1rem;
       margin-bottom: 1rem;
     }
 
     .card-logo {
-      width: 120px;
-      height: auto;
-      flex-shrink: 0;
+      width: 110px;
       border-radius: 8px;
     }
 
     .card-text {
-      flex: 1;
-      margin: 0;
       font-size: 0.95rem;
       line-height: 1.5;
-      color: var(--text);
     }
 
     .card-links {
       display: flex;
       flex-wrap: wrap;
       gap: 0.5rem;
-      justify-content: flex-start; /* Align links starting under the logo */
-      margin-bottom: 1rem;
     }
 
     .card-links a {
-      flex: 1 1 180px;
+      flex: 1 1 160px;
       text-align: center;
-      padding: 0.5rem 0;
+      padding: 0.45rem;
       border-radius: 999px;
-      font-size: 0.85rem;
+      font-size: 0.8rem;
       font-weight: 600;
       text-decoration: none;
-      color: #020617;
       background: var(--accent);
-      transition: background 0.2s, transform 0.2s;
-    }
-
-    .card-links a.secondary {
-      background: #e5e7eb;
-    }
-
-    .card-links a:hover {
-      transform: scale(1.05);
-      background-color: var(--accent);
       color: #020617;
-    }
-
-    .video-container {
-      width: 100%;
-      margin-top: 1rem;
-    }
-
-    /* Responsive for mobile */
-    @media (max-width: 600px) {
-      .card-top {
-        flex-direction: column;
-        align-items: center;
-        text-align: center;
-      }
-      .card-links {
-        justify-content: center;
-      }
-      .card-links a {
-        flex: 1 1 100%;
-      }
     }
 
     footer {
       text-align: center;
-      padding: 2rem 1.5rem;
+      padding: 2rem;
       color: var(--muted);
-      font-size: 0.85rem;
-      border-top: 1px solid rgba(148,163,184,0.15);
-    }
-
-    footer span {
-      color: var(--accent);
     }
   </style>
 </head>
+
 <body>
 
-  <header>
-    <img src="FZIS_logo.jpg" alt="Logo" style="width: 150px; height: auto; margin-bottom: 1rem;">
-    <h1>Fatima Zahra Islamic School</h1>
-    <h2>Intermediate Class - Weekly Lessons</h2>
-    <p>Structured weekly learning materials, recorded sessions, and resources.
-       All lessons are updated regularly.</p>
-  </header>
+<header>
+  <img src="FZIS_logo.jpg" style="width:150px;">
+  <h1>Fatima Zahra Islamic School</h1>
+  <h2>Intermediate Class – Weekly Lessons</h2>
+</header>
 
-  <main>
-    <section class="grid">
-      <!-- WEEK 1 -->
-      <div class="card">
-        <!-- Card Header -->
-        <div class="card-header">Week 1 · 8 Feb 2026 · Topic: Imam al-Mahdi (AS)</div>
+<main>
+<section class="grid">
 
-        <!-- Top row: Logo + Text -->
-        <div class="card-top">
-          <img src="Intidhar.jpg" alt="Logo" class="card-logo">
-          <p class="card-text">
-            This section introduces <strong>Al-Intizar</strong> (waiting), explains why being a true <strong>Muntazir</strong> matters, and teaches the core principles of readiness, devotion, and active preparation for the appearance of Imam al-Mahdi (may Allah hasten his reappearance).
-          </p>
-        </div>
+<!-- WEEK 1 -->
+<div class="card">
+  <div class="card-header">Week 1 · 8 Feb 2026 · Imam al-Mahdi (AS)</div>
+  <div class="card-top">
+    <img src="Intidhar.jpg" class="card-logo">
+    <p class="card-text">
+      Introduction to <strong>Al-Intizar</strong>, readiness, and true waiting.
+    </p>
+  </div>
+  <div class="card-links">
+    <a href="#">Slides</a>
+    <a href="Imam_AlMahdi_Lesson1_8Feb26.pdf">Resources</a>
+    <a href="https://forms.gle/UuRiBwHendDBb1bh7">Quiz</a>
+  </div>
+</div>
 
-        <!-- Links & Resources row -->
-        <div class="card-links">
-          <a class="secondary" href="#">📄 Slides</a>
-          <a class="secondary" href="Imam_AlMahdi_Lesson1_8Feb26.pdf" target="_blank">📄 Class Resources</a>
-          <a class="secondary" href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age" target="_blank">🌐 Additional Resources</a>
-          <a class="secondary" href="https://forms.gle/UuRiBwHendDBb1bh7" target="_blank">📄 Term1-Week1 Quiz(AS) </a>
-          <a class="secondary" href="https://www.youtube.com/watch?v=FZWwLWRZS3Y&t=7s" target="_blank">🎥 Who Is Imam Mehdi (AS) </a>
-        </div>
-      <!-- WEEK 2 -->
-      <div class="card">
-        <!-- Card Header -->
-        <div class="card-header">Week 2 · 15 Feb 2026 · Topic: Understanding Taqlīd and Taklīf, and Preparing for the Month of Ramadhan</div>
+<!-- WEEK 2 -->
+<div class="card">
+  <div class="card-header">Week 2 · 15 Feb 2026 · Taqlīd & Taklīf</div>
+  <div class="card-top">
+    <img src="taqlid_taklif.jpg" class="card-logo">
+    <p class="card-text">
+      Understanding religious responsibility and preparing for Ramadhan.
+    </p>
+  </div>
+  <div class="card-links">
+    <a href="#">Slides</a>
+    <a href="#">Resources</a>
+    <a href="#">Quiz</a>
+  </div>
+</div>
 
-        <!-- Top row: Logo + Text -->
-        <div class="card-top">
-          <img src="taqlid_taklif.jpg" alt="Logo" class="card-logo">
-          <p class="card-text">
-          This section introduces <strong>Taqlīd</strong> (following religious authority) and <strong>Taklīf</strong>, explains why understanding both is essential, and teaches the core principles of awareness, accountability, and spiritual readiness while preparing for the blessed month of <strong>Ramadhan</strong>.
-          </p>
-        </div>
+<!-- WEEK 3 -->
+<div class="card">
+  <div class="card-header">Week 3 · Coming Soon</div>
+  <div class="card-top">
+    <img src="taqlid_taklif.jpg" class="card-logo">
+    <p class="card-text">
+      Content will be uploaded soon.
+    </p>
+  </div>
+  <div class="card-links">
+    <a href="#">TBA</a>
+  </div>
+</div>
 
-        <!-- Links & Resources row -->
-        <div class="card-links">
-          <a class="secondary" href="#">📄 Slides</a>
-          <a class="secondary" href="Imam_AlMahdi_Lesson1_8Feb26.pdf" target="_blank">📄 Class Resources</a>
-          <a class="secondary" href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age" target="_blank">🌐 Additional Resources</a>
-          <a class="secondary" href="https://forms.gle/UuRiBwHendDBb1bh7" target="_blank">📄 Term1-Week1 Quiz(AS) </a>
-          <a class="secondary" href="https://www.youtube.com/watch?v=FZWwLWRZS3Y&t=7s" target="_blank">🎥 Who Is Imam Mehdi (AS) </a>
-      </div>
+</section>
+</main>
 
-      <!-- WEEK 3 -->
-      <div class="card">
-        <!-- Card Header -->
-        <div class="card-header">Week 2 · 15 Feb 2026 · Topic: Understanding Taqlīd and Taklīf, and Preparing for the Month of Ramadhan</div>
-
-        <!-- Top row: Logo + Text -->
-        <div class="card-top">
-          <img src="taqlid_taklif.jpg" alt="Logo" class="card-logo">
-          <p class="card-text">
-          This section introduces <strong>Taqlīd</strong> (following religious authority) and <strong>Taklīf</strong>, explains why understanding both is essential, and teaches the core principles of awareness, accountability, and spiritual readiness while preparing for the blessed month of <strong>Ramadhan</strong>.
-          </p>
-        </div>
-
-        <!-- Links & Resources row -->
-        <div class="card-links">
-          <a class="secondary" href="#">📄 Slides</a>
-          <a class="secondary" href="Imam_AlMahdi_Lesson1_8Feb26.pdf" target="_blank">📄 Class Resources</a>
-          <a class="secondary" href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age" target="_blank">🌐 Additional Resources</a>
-          <a class="secondary" href="https://forms.gle/UuRiBwHendDBb1bh7" target="_blank">📄 Term1-Week1 Quiz(AS) </a>
-          <a class="secondary" href="https://www.youtube.com/watch?v=FZWwLWRZS3Y&t=7s" target="_blank">🎥 Who Is Imam Mehdi (AS) </a>
-      </div>
-
-     <!-- WEEK 2 -->
-      <div class="card">
-        <!-- Card Header -->
-        <div class="card-header">Week 2 · 15 Feb 2026 · Topic: Understanding Taqlīd and Taklīf, and Preparing for the Month of Ramadhan</div>
-
-        <!-- Top row: Logo + Text -->
-        <div class="card-top">
-          <img src="taqlid_taklif.jpg" alt="Logo" class="card-logo">
-          <p class="card-text">
-          This section introduces <strong>Taqlīd</strong> (following religious authority) and <strong>Taklīf</strong>, explains why understanding both is essential, and teaches the core principles of awareness, accountability, and spiritual readiness while preparing for the blessed month of <strong>Ramadhan</strong>.
-          </p>
-        </div>
-
-        <!-- Links & Resources row -->
-        <div class="card-links">
-          <a class="secondary" href="#">📄 Slides</a>
-          <a class="secondary" href="Imam_AlMahdi_Lesson1_8Feb26.pdf" target="_blank">📄 Class Resources</a>
-          <a class="secondary" href="https://al-islam.org/life-imam-al-mahdi-baqir-shareef-al-qurashi/time-and-venue-reappearance-his-eminence-master-age" target="_blank">🌐 Additional Resources</a>
-          <a class="secondary" href="https://forms.gle/UuRiBwHendDBb1bh7" target="_blank">📄 Term1-Week1 Quiz(AS) </a>
-          <a class="secondary" href="https://www.youtube.com/watch?v=FZWwLWRZS3Y&t=7s" target="_blank">🎥 Who Is Imam Mehdi (AS) </a>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <p>© <span>Ahmed Mehdi</span> · Hosted on GitHub Pages</p>
-  </footer>
+<footer>
+  © <strong>Ahmed Mehdi</strong> · GitHub Pages
+</footer>
 
 </body>
 </html>
